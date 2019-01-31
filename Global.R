@@ -70,7 +70,7 @@ choice = c()
 for(i in 1:length(temp)){
   choice = c(choice, gsub(as.character(temp[i]), pattern=".csv$", replacement=""))
 }
-choice
+
 colnames(tidy_total)
 levels(as.factor(tidy_total$movie))
 

@@ -72,7 +72,7 @@ server <- function(input, output){
       filter(.,movie==input$selected) %>%
       inner_join(get_sentiments("bing")) %>%
       count(word, sentiment, sort = TRUE) %>%
-      acast(word ~ sentiment, value.var = "n", fill = 8) %>%
+      acast(word ~ sentiment, value.var = "n", fill = 1) %>%
       comparison.cloud(colors = c("#F8766D", "#00BFC4"),
                        max.words = 250)
   })
@@ -80,7 +80,7 @@ server <- function(input, output){
   output$bigramtitle = renderText({
     input$selected
   })
-  
+
   output$bigram <- renderPlot({
     tidy_total %>%
       filter(.,movie==input$selected) %>%
@@ -92,7 +92,8 @@ server <- function(input, output){
       visualize_bigrams()
   })
   
-  # show statistics using infoBox
+  #infoboxes in each tabs. 
+  #tab1
   output$comments1 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
     infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
@@ -113,6 +114,7 @@ server <- function(input, output){
             icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
+  #tab2
   output$comments2 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
     infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
@@ -133,6 +135,7 @@ server <- function(input, output){
             icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
+  #tab3
   output$comments3 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
     infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
@@ -153,6 +156,7 @@ server <- function(input, output){
             icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
+  #tab4
   output$comments4 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
     infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
@@ -172,7 +176,8 @@ server <- function(input, output){
             paste(tidy_percentile, "%"), 
             icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
-  
+ 
+  #tab5 
   output$comments5 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
     infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))

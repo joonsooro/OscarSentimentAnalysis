@@ -2,7 +2,6 @@
 ui <- dashboardPage(
   dashboardHeader(title = "2018 Oscar Nominee"),
   dashboardSidebar(
-    
     sidebarMenu(
       menuItem("EDA", tabName = "map", icon = shiny::icon("500px",  "fa-2x", lib = "font-awesome")),
       menuItem("Top 10 words", tabName = "data", icon = shiny::icon("adn",  "fa-2x", lib = "font-awesome")),
@@ -18,14 +17,15 @@ ui <- dashboardPage(
   ),
   dashboardBody(
     tags$head(
-      tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
+      tags$link(rel = "stylesheet", type = "text/css", href = "custom.css"),
+      tags$style(HTML(".main-sidebar { font-size: 11px; }")) #change the font size to 20
     ),
     tabItems(
       tabItem(tabName = "map",
               fluidRow(box(plotlyOutput("map"), height = 450, width = 12),
                        box(plotlyOutput("hist"), height = 450, width = 12))),
       tabItem(tabName = "data",
-              fluidRow(infoBoxOutput("comments1",),
+              fluidRow(infoBoxOutput("comments1"),
                        infoBoxOutput("likes1"),
                        infoBoxOutput("replies1")),
               fluidRow(box(plotlyOutput("words"), height = 450,width =12))
