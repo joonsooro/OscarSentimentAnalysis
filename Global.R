@@ -14,6 +14,8 @@ library(reshape2)
 library(igraph)
 library(ggraph)
 library(rsconnect)
+library(fontawesome)
+
 remove_reg <- "&amp;|&lt;|&gt;"
 nrc <- get_sentiments("nrc")
 bing <- get_sentiments("bing")
@@ -81,6 +83,7 @@ count_bigrams <- function(dataset) {
            !word2 %in% stop_words$word) %>%
     count(word1, word2, sort = TRUE)
 }
+
 visualize_bigrams <- function(bigrams) {
   set.seed(2016)
   a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
@@ -94,4 +97,5 @@ visualize_bigrams <- function(bigrams) {
     ggtitle("Network graph of bigrams") +
     theme_void()
 }
+
 

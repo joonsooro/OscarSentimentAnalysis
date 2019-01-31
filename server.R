@@ -95,13 +95,13 @@ server <- function(input, output){
   # show statistics using infoBox
   output$comments1 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
-    infoBox("Comments", comment_count, icon = icon("han"))
+    infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
   })
   
   output$likes1 <- renderInfoBox({
     tidy_total_like = tidy_total %>% filter(.,movie==input$selected) 
     like_sum = sum(tidy_total_like[,"likes"])
-    infoBox("Likes", like_sum, icon = icon("hand-o-down"))
+    infoBox("Likes", like_sum, icon = shiny::icon("buysellads", lib = "font-awesome"))
   })
   
   output$replies1 <- renderInfoBox({
@@ -110,18 +110,18 @@ server <- function(input, output){
     tidy_percentile = round(tidy_true/(nrow(tidy_total %>% filter(.,movie==input$selected))),3)
     infoBox("Reply Ratio",
             paste(tidy_percentile, "%"), 
-            icon = icon("calculator"), fill = TRUE)
+            icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
   output$comments2 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
-    infoBox("Comments", comment_count, icon = icon("han"))
+    infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
   })
   
   output$likes2 <- renderInfoBox({
     tidy_total_like = tidy_total %>% filter(.,movie==input$selected) 
     like_sum = sum(tidy_total_like[,"likes"])
-    infoBox("Likes", like_sum, icon = icon("hand-o-down"))
+    infoBox("Likes", like_sum, icon = shiny::icon("buysellads", lib = "font-awesome"))
   })
   
   output$replies2 <- renderInfoBox({
@@ -130,18 +130,18 @@ server <- function(input, output){
     tidy_percentile = round(tidy_true/(nrow(tidy_total %>% filter(.,movie==input$selected))),3)
     infoBox("Reply Ratio",
             paste(tidy_percentile, "%"), 
-            icon = icon("calculator"), fill = TRUE)
+            icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
   output$comments3 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
-    infoBox("Comments", comment_count, icon = icon("han"))
+    infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
   })
   
   output$likes3 <- renderInfoBox({
     tidy_total_like = tidy_total %>% filter(.,movie==input$selected) 
     like_sum = sum(tidy_total_like[,"likes"])
-    infoBox("Likes", like_sum, icon = icon("hand-o-down"))
+    infoBox("Likes", like_sum, icon = shiny::icon("buysellads", lib = "font-awesome"))
   })
   
   output$replies3 <- renderInfoBox({
@@ -150,18 +150,18 @@ server <- function(input, output){
     tidy_percentile = round(tidy_true/(nrow(tidy_total %>% filter(.,movie==input$selected))),3)
     infoBox("Reply Ratio",
             paste(tidy_percentile, "%"), 
-            icon = icon("calculator"), fill = TRUE)
+            icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
   output$comments4 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
-    infoBox("Comments", comment_count, icon = icon("han"))
+    infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
   })
   
   output$likes4 <- renderInfoBox({
     tidy_total_like = tidy_total %>% filter(.,movie==input$selected) 
     like_sum = sum(tidy_total_like[,"likes"])
-    infoBox("Likes", like_sum, icon = icon("hand-o-down"))
+    infoBox("Likes", like_sum, icon = shiny::icon("buysellads", lib = "font-awesome"))
   })
   
   output$replies4 <- renderInfoBox({
@@ -170,18 +170,18 @@ server <- function(input, output){
     tidy_percentile = round(tidy_true/(nrow(tidy_total %>% filter(.,movie==input$selected))),3)
     infoBox("Reply Ratio",
             paste(tidy_percentile, "%"), 
-            icon = icon("calculator"), fill = TRUE)
+            icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
   output$comments5 <- renderInfoBox({
     comment_count <- commentcounts[movie_title==input$selected,2]
-    infoBox("Comments", comment_count, icon = icon("han"))
+    infoBox("Comments", comment_count, icon = shiny::icon("accusoft", lib = "font-awesome"))
   })
   
   output$likes5 <- renderInfoBox({
     tidy_total_like = tidy_total %>% filter(.,movie==input$selected) 
     like_sum = sum(tidy_total_like[,"likes"])
-    infoBox("Likes", like_sum, icon = icon("hand-o-down"))
+    infoBox("Likes", like_sum, icon = shiny::icon("buysellads", lib = "font-awesome"))
   })
   
   output$replies5 <- renderInfoBox({
@@ -190,7 +190,7 @@ server <- function(input, output){
     tidy_percentile = round(tidy_true/(nrow(tidy_total %>% filter(.,movie==input$selected))),3)
     infoBox("Reply Ratio",
             paste(tidy_percentile, "%"), 
-            icon = icon("calculator"), fill = TRUE)
+            icon = shiny::icon("peace", lib = "font-awesome"), fill = TRUE)
   })
   
 } 

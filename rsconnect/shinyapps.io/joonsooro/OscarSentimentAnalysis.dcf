@@ -5,9 +5,9 @@ account: joonsooro
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 675216
-bundleId: 1847181
+bundleId: 1847385
 url: https://joonsooro.shinyapps.io/OscarSentimentAnalysis/
-when: 1548896736.96076
+when: 1548906831.70702
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: www/florida.jpg|www/main.jpg

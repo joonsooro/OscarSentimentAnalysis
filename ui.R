@@ -4,12 +4,12 @@ ui <- dashboardPage(
   dashboardSidebar(
     
     sidebarMenu(
-      menuItem("EDA", tabName = "map", icon = icon("map")),
-      menuItem("Top 10 words", tabName = "data", icon = icon("database")),
-      menuItem("Sentiments", tabName = "Sentiments", icon = icon("")),
-      menuItem("Sentiments-Time", tabName = "Sentiments-Time", icon= icon("Sentiments-Time")),
-      menuItem("WordClouds", tabName = "wordcloud", icon = icon("wordcloud")),
-      menuItem("Bigrams", tabName = "bigram", icon = icon("bigram"))
+      menuItem("EDA", tabName = "map", icon = shiny::icon("500px",  "fa-2x", lib = "font-awesome")),
+      menuItem("Top 10 words", tabName = "data", icon = shiny::icon("adn",  "fa-2x", lib = "font-awesome")),
+      menuItem("Sentiments", tabName = "Sentiments", icon = shiny::icon("eye",  "fa-2x", lib = "font-awesome")),
+      menuItem("Sentiments-Time", tabName = "Sentiments-Time", icon= shiny::icon("calendar-check",  "fa-2x", lib = "font-awesome")),
+      menuItem("WordClouds", tabName = "wordcloud", icon = shiny::icon("wordpress-simple",  "fa-2x",lib = "font-awesome")),
+      menuItem("Bigrams", tabName = "bigram", icon = shiny::icon("angrycreative", "fa-2x", lib = "font-awesome"))
     ),
     selectizeInput("selected",
                    "Select Movie",
@@ -25,7 +25,7 @@ ui <- dashboardPage(
               fluidRow(box(plotlyOutput("map"), height = 450, width = 12),
                        box(plotlyOutput("hist"), height = 450, width = 12))),
       tabItem(tabName = "data",
-              fluidRow(infoBoxOutput("comments1"),
+              fluidRow(infoBoxOutput("comments1",),
                        infoBoxOutput("likes1"),
                        infoBoxOutput("replies1")),
               fluidRow(box(plotlyOutput("words"), height = 450,width =12))
